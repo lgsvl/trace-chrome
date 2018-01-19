@@ -18,7 +18,9 @@ Chrome(options, function (chrome) {
 
 	if (program.showcategories) {
 	    Tracing.getCategories(function (message, result) {
-		console.log(result);
+		for (i = 0; i < result["categories"].length; i++) {
+		    console.log(result["categories"][i]);
+		}
 		close();
 	    });
 	} else {
