@@ -5,6 +5,7 @@ program.option('-H, --host <host>', 'Remote debugging protocol host', 'localhost
        .option('-p, --port <port>', 'Remote debugging protocool port', '9876')
        .option('-s, --showcategories', 'Show categories')
        .option('-c, --categories <categories>', 'Set categories', "")
+       .option('-e, --excludecategories <categories>', 'Exclude categories', "")
        .parse(process.argv);
 
 var options = {
@@ -33,8 +34,16 @@ Chrome(options, function (chrome) {
 		Tracing.end();
             });
 	    console.error("Connecting to: "+program.host+":"+program.port);
-	    console.error("Categories: "+program.categories);
-            Tracing.start({"categories":program.categories});
+	    traceConfig = {};
+	    if (program.categories) {
+	        console.error("Categories: "+program.categories);
+                traceConfig["includedCategories"] = program.categories.split(",");
+	    }
+	    if (program.excludecategories) {
+		traceConfig["excludedCategories"] = program.excludecategories.split(",");
+	        console.error("Excluded categories: "+ program.excludecategories);
+	    }
+            Tracing.start({"traceConfig" : traceConfig});
 	}
     }
 }).on('error', function () {
