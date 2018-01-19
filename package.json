@@ -7,7 +7,7 @@
     "keywords": ["chrome", "remote", "debug", "interface", "tracing"],
     "version": "0.0.1",
     "dependencies": {
-        "chrome-remote-interface": "0.5.x",
+        "chrome-remote-interface": "0.13.x",
         "commander": "2.1.x"
     },
     "bin": {
