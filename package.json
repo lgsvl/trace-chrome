@@ -1,10 +1,15 @@
 {
     "name": "trace-chrome",
     "author": "Jose Dapena Paz <jose.dapena@lge.com>",
-    "contributors": [
-    ],
+    "contributors": [],
     "description": "Chrome tracer using Remote Debugging Protocol",
-    "keywords": ["chrome", "remote", "debug", "interface", "tracing"],
+    "keywords": [
+        "chrome",
+        "remote",
+        "debug",
+        "interface",
+        "tracing"
+    ],
     "version": "0.0.1",
     "dependencies": {
         "chrome-remote-interface": "0.13.x",
