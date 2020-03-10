@@ -84,7 +84,7 @@ Chrome(options, function (chrome) {
 		dumpInterval = setInterval(dump_memory, program.memory_dump_interval);
 	    }
 	    console.error("Traceconfig is " + JSON.stringify(traceConfig));
-            Tracing.start({"traceConfig" : traceConfig});
+            Tracing.start({"traceConfig" : traceConfig, "streamFormat" : "json"});
 	}
     }
 }).on('error', function () {
