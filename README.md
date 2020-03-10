@@ -53,6 +53,13 @@ On running chromium, enable remote debugging port:
 
 	chromium --remote-debugging-port=9876
 
+Enable devtool :
+
+        mkdir -p /var/luna/preferences
+        cd /var/luna/preferences
+        touch devmode_enabled
+        touch debug_system_apps
+
 As Chromium sets as incoming address 127.0.0.1, remote access to the
 debugging port is not allowed. So a tunnel is needed to access device
 port from host machine. SSH can be used for that:
